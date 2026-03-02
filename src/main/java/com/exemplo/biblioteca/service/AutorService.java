@@ -39,4 +39,12 @@ public class AutorService {
         buscarPorId(id);
         autorRepository.deleteById(id);
     }
+
+    public Autor atualizarAutor(Long id, Autor autorAtualizado) {
+        Autor autorExistente = buscarPorId(id);
+        autorExistente.setNome(autorAtualizado.getNome());
+        autorExistente.setNacionalidade(autorAtualizado.getNacionalidade());
+        autorExistente.setDataNascimento(autorAtualizado.getDataNascimento());
+        return autorRepository.save(autorExistente);
+    }
 }

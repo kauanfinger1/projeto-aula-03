@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
 
@@ -44,5 +45,10 @@ public class AutorController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void remover(@PathVariable Long id) {
         autorService.removerAutor(id);
+    }
+
+    @PutMapping("/{id}")
+    public Autor atualizar(@PathVariable Long id, @RequestBody Autor autor){
+        return autorService.atualizarAutor(id, autor);
     }
 }
