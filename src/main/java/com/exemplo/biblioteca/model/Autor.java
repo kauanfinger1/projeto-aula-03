@@ -1,15 +1,24 @@
 package com.exemplo.biblioteca.model;
+
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+@Entity
 public class Autor {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String nacionalidade;
     private String dataNascimento;
+
+    @OneToMany(mappedBy = "autor")
     private List<Livro> livros = new ArrayList<>();
-    public Autor() {
-    }
+
+    public Autor() {}
 
     public Autor(Long id, String nome, String nacionalidade, String dataNascimento) {
         this.id = id;
@@ -49,6 +58,7 @@ public class Autor {
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+
     public List<Livro> getLivros() {
         return livros;
     }

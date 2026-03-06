@@ -15,8 +15,13 @@ public class AutorRepository {
     private final AtomicLong sequence = new AtomicLong(0);
 
     public AutorRepository() {
-        save(new Autor(null, "Machado de Assis", "Brasileiro", "1839-06-21"));
         save(new Autor(null, "George Orwell", "Britânico", "1903-06-25"));
+        save(new Autor(null, "J.K. Rowling", "Britânica", "1965-07-31"));
+        save(new Autor(null, "Machado de Assis", "Brasileiro", "1839-06-21"));
+
+        Autor orwell = findById(1L).get();
+        Autor rowling = findById(2L).get();
+        Autor machado = findById(3L).get();
     }
 
     public Autor save(Autor autor) {

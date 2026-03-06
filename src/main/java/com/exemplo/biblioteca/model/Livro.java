@@ -1,18 +1,27 @@
 package com.exemplo.biblioteca.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Livro {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String titulo;
-    private String autor;
+
+    @ManyToOne
+    @JoinColumn(name = "autor_id")
+    private Autor autor;
+
     private Integer anoPublicacao;
     private String isbn;
     private Boolean disponivel;
 
-    public Livro() {
-    }
+    public Livro() {}
 
-    public Livro(Long id, String titulo, String autor, Integer anoPublicacao, String isbn, Boolean disponivel) {
+    public Livro(Long id, String titulo, Autor autor, Integer anoPublicacao, String isbn, Boolean disponivel) {
         this.id = id;
         this.titulo = titulo;
         this.autor = autor;
@@ -37,11 +46,11 @@ public class Livro {
         this.titulo = titulo;
     }
 
-    public String getAutor() {
+    public Autor getAutor() {
         return autor;
     }
 
-    public void setAutor(String autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 
