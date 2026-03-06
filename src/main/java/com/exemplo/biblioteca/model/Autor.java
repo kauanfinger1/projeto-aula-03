@@ -1,23 +1,13 @@
 package com.exemplo.biblioteca.model;
-
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
-
-=======
->>>>>>> 873cf8af20d888d671d7f3344a84856c52410611
 public class Autor {
 
     private Long id;
     private String nome;
     private String nacionalidade;
     private String dataNascimento;
-
-<<<<<<< HEAD
     private List<Livro> livros = new ArrayList<>();
-
-=======
->>>>>>> 873cf8af20d888d671d7f3344a84856c52410611
     public Autor() {
     }
 
@@ -59,8 +49,6 @@ public class Autor {
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
-<<<<<<< HEAD
-
     public List<Livro> getLivros() {
         return livros;
     }
@@ -69,6 +57,3 @@ public class Autor {
         this.livros = livros;
     }
 }
-=======
-}
->>>>>>> 873cf8af20d888d671d7f3344a84856c52410611

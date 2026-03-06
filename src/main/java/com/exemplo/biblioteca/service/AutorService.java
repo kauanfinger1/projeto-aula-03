@@ -4,11 +4,7 @@ import com.exemplo.biblioteca.model.Autor;
 import com.exemplo.biblioteca.repository.AutorRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-<<<<<<< HEAD
 import com.exemplo.biblioteca.model.Livro;
-=======
->>>>>>> 873cf8af20d888d671d7f3344a84856c52410611
-
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
@@ -51,13 +47,9 @@ public class AutorService {
         autorExistente.setDataNascimento(autorAtualizado.getDataNascimento());
         return autorRepository.save(autorExistente);
     }
-<<<<<<< HEAD
-
     public List<Livro>
     listarLivrosdoAutor(Long id){
         Autor autor = buscarPorId(id);
         return autor.getLivros();
     }
-=======
->>>>>>> 873cf8af20d888d671d7f3344a84856c52410611
 }
